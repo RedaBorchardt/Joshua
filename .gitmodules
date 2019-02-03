@@ -6,14 +6,14 @@
     path = Joshua/External/glad
     url = https://github.com/RedaBorchardt/glad.git 
     branch = c
+[submodule "Joshua/External/glm"]
+    path = Joshua/External/glm
+    url = https://github.com/RedaBorchardt.glm.git
+    branch = 0.9.3
 [submodule "Joshua/External/glfw"]
     path = Joshua/External/glfw
     url = https://github.com/RedaBorchardt/glfw.git
     branch = master
-[submodule "Joshua/External/glm"]
-    path = Joshua/External/glm
-    url = https://github.com/RedaBorchardt/glm.git
-    branch = 0.9.3
 [submodule "Joshua/External/stb"]
     path = Joshua/External/stb
     url = https://github.com/RedaBorchardt/stb.git
