@@ -4,7 +4,7 @@
     branch = master
 [submodule "Joshua/External/glad"]
     path = Joshua/External/glad
-    url = https://github.com/RedaBorchardt/glad.git
+	url = https://github.com/Dav1dde/glad
     branch = c
 [submodule "Joshua/External/glfw"]
     path = Joshua/External/glfw
