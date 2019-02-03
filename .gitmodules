@@ -13,7 +13,7 @@
 [submodule "Joshua/External/glm"]
     path = Joshua/External/glm
     url = https://github.com/RedaBorchardt/glm.git
-    branch = master
+    branch = 0.9.3
 [submodule "Joshua/External/stb"]
     path = Joshua/External/stb
     url = https://github.com/RedaBorchardt/stb.git
