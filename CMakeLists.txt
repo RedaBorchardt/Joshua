@@ -43,10 +43,15 @@ file(GLOB PROJECT_SHADERS Joshua/Shaders/*.comp
                           Joshua/Shaders/*.geom
                           Joshua/Shaders/*.vert)
 file(GLOB PROJECT_CONFIGS CMakeLists.txt
-			  README.md
+                          Readme.md
                          .gitattributes
                          .gitignore
                          .gitmodules)
+
+source_group("Headers" FILES ${PROJECT_HEADERS})
+source_group("Shaders" FILES ${PROJECT_SHADERS})
+source_group("Sources" FILES ${PROJECT_SOURCES})
+source_group("External" FILES ${EXTERNAL_SOURCES})
 
 add_definitions(-DGLFW_INCLUDE_NONE
                 -DPROJECT_SOURCE_DIR=\"${PROJECT_SOURCE_DIR}\")
@@ -58,5 +63,3 @@ target_link_libraries(${PROJECT_NAME} assimp glfw
                       BulletDynamics BulletCollision LinearMath)
 set_target_properties(${PROJECT_NAME} PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${PROJECT_NAME})
-
-SET( CMAKE_EXPORT_COMPILE_COMMANDS ON )
