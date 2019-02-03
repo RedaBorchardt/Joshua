@@ -1,5 +1,6 @@
 // Local Headers
 #include "joshua.hpp"
+#include "shader.hpp"
 
 // System Headers
 #include <glad/glad.h>
@@ -10,7 +11,6 @@
 #include <cstdlib>
 
 int main(int argc, char * argv[]) {
-
     // Load GLFW and Create a Window
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
