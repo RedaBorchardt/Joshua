@@ -10,6 +10,7 @@
 #include <btBulletDynamicsCommon.h>
 #include <glad/glad.h>
 #include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
 // Add to one source file:  #define STB_IMAGE_IMPLEMENTATION

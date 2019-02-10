@@ -156,8 +156,6 @@ int main()
     // or set it via the texture class
     ourShader.setInt("texture2", 1);
 
-
-
     // render loop
     // -----------
     while (!glfwWindowShouldClose(window))
@@ -165,6 +163,13 @@ int main()
         // input
         // -----
         processInput(window);
+
+	// tranforms
+	// -----
+	glm::mat4 trans = glm::mat4(1.0f);
+	trans = glm::rotate(trans, (float)glfwGetTime()*10, glm::vec3(0.0f, 0.0f, 1.0f));
+	//trans = glm::scale(trans, glm::vec3((float)sin(glfwGetTime()/10), (float)sin(glfwGetTime()/10), 1.0f));
+	//trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
 
         // render
         // ------
@@ -177,9 +182,22 @@ int main()
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, texture2);
 
-        // render container
+	// Going 3D
+        glm::mat4 model         = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
+        glm::mat4 view          = glm::mat4(1.0f);
+        glm::mat4 projection    = glm::mat4(1.0f);
+        model = glm::rotate(model, 0.0f+(float)glfwGetTime()*20, glm::vec3(1.0f, 0.0f, 0.0f));
+        view  = glm::translate(view, glm::vec3(0.0f, -0.0f, -2.0f));
+        projection = glm::perspective(45.0f, (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
+
+	// render container
         ourShader.use();
 	ourShader.setFloat("mixvalue", mixvalue);
+	ourShader.setMat4("transform", trans);
+	ourShader.setMat4("model", model);
+	ourShader.setMat4("projection", projection);
+	ourShader.setMat4("view", view);
+
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
