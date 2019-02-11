@@ -12,7 +12,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <iostream>
-
+ 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
 
@@ -156,6 +156,20 @@ int main()
     // or set it via the texture class
     ourShader.setInt("texture2", 1);
 
+    // Camera
+    //glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
+    //glm::vec3 cameraTarget = glm::vec3(0.0f,0.0f,0.0f);
+    //glm::vec3 cameraDirection = glm::normalize(cameraPos - cameraTarget);
+
+    //glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f);
+    //glm::vec3 cameraRight = glm::normalize(glm::cross(up, cameraDirection));
+    //glm::vec3 cameraUp = glm::cross(cameraDirection, cameraRight);
+
+    glm::mat4 view;
+    view = glm::lookAt(glm::vec3(0.0f, 0.0f, 2.0f),
+		    glm::vec3(0.0f, 0.0f, 0.0f),
+		    glm::vec3(0.0f, 1.0f, 0.0f));
+
     // render loop
     // -----------
     while (!glfwWindowShouldClose(window))
@@ -184,10 +198,10 @@ int main()
 
 	// Going 3D
         glm::mat4 model         = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
-        glm::mat4 view          = glm::mat4(1.0f);
+        //glm::mat4 view          = glm::mat4(1.0f);
         glm::mat4 projection    = glm::mat4(1.0f);
         model = glm::rotate(model, 0.0f+(float)glfwGetTime()*20, glm::vec3(1.0f, 0.0f, 0.0f));
-        view  = glm::translate(view, glm::vec3(0.0f, -0.0f, -2.0f));
+        //view  = glm::translate(view, glm::vec3(0.0f, -0.0f, -2.0f));
         projection = glm::perspective(45.0f, (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
 
 	// render container
