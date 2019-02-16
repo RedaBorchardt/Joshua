@@ -18,6 +18,8 @@ option(BUILD_OPENGL3_DEMOS OFF)
 option(BUILD_UNIT_TESTS OFF)
 add_subdirectory(Joshua/External/bullet)
 
+add_subdirectory(Joshua/External/gl3w)
+
 if(MSVC)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4")
 else()
@@ -30,14 +32,17 @@ endif()
 include_directories(Joshua/Headers/
                     Joshua/External/assimp/include/
                     Joshua/External/bullet/src/
-                    Joshua/External/glad/include/
                     Joshua/External/glfw/include/
                     Joshua/External/glm/
-                    Joshua/External/stb/)
+                    Joshua/External/stb/
+		    Joshua/External/gl3w/include/
+		    )
 
-file(GLOB EXTERNAL_SOURCES Joshua/External/glad/src/glad.c)
-file(GLOB PROJECT_HEADERS Joshua/Headers/*.hpp)
-file(GLOB PROJECT_SOURCES Joshua/Sources/*.cpp)
+file(GLOB EXTERNAL_SOURCES Joshua/External/gl3w/src/gl3w.c)
+file(GLOB PROJECT_HEADERS Joshua/Headers/*.hpp
+	)
+file(GLOB PROJECT_SOURCES Joshua/Sources/*.cpp
+	)
 file(GLOB PROJECT_SHADERS Joshua/Shaders/*.comp
                           Joshua/Shaders/*.frag
                           Joshua/Shaders/*.geom
