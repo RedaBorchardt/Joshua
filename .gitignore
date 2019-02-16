@@ -1,6 +1,9 @@
 # Folders
 [Bb]uild/
 
+#Excludes
+![Bb]uild/run.sh
+
 # Prerequisites
 *.d
 
