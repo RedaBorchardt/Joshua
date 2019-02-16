@@ -21,3 +21,6 @@
 [submodule "Joshua/External/gl3w"]
 	path = Joshua/External/gl3w
 	url = https://github.com/skaslev/gl3w
+[submodule "Joshua/External/imgui"]
+	path = Joshua/External/imgui
+	url = https://github.com/ocornut/imgui

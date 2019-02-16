@@ -35,10 +35,18 @@ include_directories(Joshua/Headers/
                     Joshua/External/glfw/include/
                     Joshua/External/glm/
                     Joshua/External/stb/
-		    Joshua/External/gl3w/include/
+				    Joshua/External/gl3w/include/
+					Joshua/External/imgui/
 		    )
 
-file(GLOB EXTERNAL_SOURCES Joshua/External/gl3w/src/gl3w.c)
+file(GLOB EXTERNAL_SOURCES Joshua/External/gl3w/src/gl3w.c
+						   Joshua/External/imgui/examples/imgui_impl_opengl3.cpp
+						   Joshua/External/imgui/examples/imgui_impl_glfw.cpp
+						   Joshua/External/imgui/imgui.cpp
+						   Joshua/External/imgui/imgui_draw.cpp
+						   Joshua/External/imgui/imgui_widgets.cpp
+						   Joshua/External/imgui/imgui_demo.cpp 
+		)
 file(GLOB PROJECT_HEADERS Joshua/Headers/*.hpp
 	)
 file(GLOB PROJECT_SOURCES Joshua/Sources/*.cpp
