@@ -24,3 +24,4 @@
 *.woff binary
 *.pyc binary
 *.pdf binary
+*.so binary
