@@ -24,3 +24,6 @@
 [submodule "Joshua/External/imgui"]
 	path = Joshua/External/imgui
 	url = https://github.com/ocornut/imgui
+[submodule "Joshua/External/boost"]
+	path = Joshua/External/boost
+	url = https://github.com/Orphis/boost-cmake

@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.0)
 project(Joshua)
 
+add_subdirectory(Joshua/External/boost)
+
 option(GLFW_BUILD_DOCS OFF)
 option(GLFW_BUILD_EXAMPLES OFF)
 option(GLFW_BUILD_TESTS OFF)
@@ -82,7 +84,7 @@ add_executable(${PROJECT_NAME} ${PROJECT_SOURCES} ${PROJECT_HEADERS}
 			       ${EXTERNAL_SOURCES} ${PROJECT_TEXTURES})
 target_link_libraries(${PROJECT_NAME} assimp glfw
 		${GLFW_LIBRARIES} ${GLAD_LIBRARIES} ${IRRKLANG_LIBRARIES}
-                      BulletDynamics BulletCollision LinearMath)
+                      BulletDynamics BulletCollision LinearMath Boost::regex)
 set_target_properties(${PROJECT_NAME} PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${PROJECT_NAME})
 

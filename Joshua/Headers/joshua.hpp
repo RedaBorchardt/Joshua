@@ -1,6 +1,6 @@
 // Preprocessor Directives
-#ifndef JOSHUA
-#define JOSHUA
+#ifndef JOSHUA_HPP
+#define JOSHUA_HPP
 #pragma once
 
 // System Headers
