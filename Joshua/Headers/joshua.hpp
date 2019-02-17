@@ -4,6 +4,7 @@
 #pragma once
 
 // System Headers
+#include <irrKlang.h>
 #include "imgui.h"
 #include "examples/imgui_impl_opengl3.h"
 #include "examples/imgui_impl_glfw.h"
